@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consulting — PEARMIACT</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="pages/webstyles/common.css">
+<link rel="stylesheet" href="pages/webstyles/nav.css">
+<style>
+   /* ========== THEME COLORS ========== */
+:root {
+  --gold: burlywood;
+  --gold-d: #a87b2b;
+  --ink: #0b0404;
+  --paper: #ffffff;
+  --shadow: rgba(0,0,0,0.12);
+  --shadow-strong: rgba(188,144,61,0.6);
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  /* base gradient */
+  background: linear-gradient(135deg, #000, var(--gold), #000);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: var(--paper);
+}
+
+/* subtle gradient animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ========== INTRO SECTION ========== */
+.services-intro {
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+.services-intro h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--gold);
+}
+.services-intro p {
+  font-size: 1.2rem;
+  color: #f1e6cf;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ========== PACKAGES GRID ========== */
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+  padding: 50px 20px 60px;
+}
+
+/* ========== PACKAGE CARD ========== */
+.package-card {
+  background: black;
+  border-radius: 26px;
+  padding: 28px 20px;
+  text-align: center;
+  box-shadow: 0 6px 12px var(--shadow);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
+  overflow: hidden;
+  animation: floaty 7s ease-in-out infinite;
+}
+
+/* floaty effect */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* hover lift + glow */
+.package-card:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 0 18px var(--shadow-strong);
+}
+
+/* icon shimmer */
+.package-card i {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--gold), #fff8dc, var(--gold));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: iconShimmer 3s linear infinite;
+}
+@keyframes iconShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* headings & text inside card */
+.package-card h3 {
+  margin-top: 14px;
+  margin-bottom: 10px;
+  font-size: 1.45rem;
+  color: var(--paper);
+}
+.package-card p.description {
+  font-size: 1rem;
+  color: #f1e6cf;
+  margin-bottom: 15px;
+}
+.package-card .price {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: var(--gold);
+}
+
+/* feature list toggle */
+.package-card .features {
+  display: none;
+  text-align: left;
+  margin-top: 10px;
+  color: #f1e6cf;
+}
+.package-card .features li {
+  margin-bottom: 8px;
+}
+
+/* ========== BUTTONS ========== */
+button.toggle-features,
+button.get-started {
+  border: none;
+  border-radius: 28px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+button.toggle-features {
+  background-color: var(--ink);
+  color: var(--gold);
+}
+button.toggle-features:hover {
+  background-color: var(--gold-d);
+  color: var(--ink);
+}
+
+button.get-started {
+  background-color: var(--gold);
+  color: var(--ink);
+}
+button.get-started:hover {
+  background-color: var(--gold-d);
+  color: var(--ink);
+  box-shadow: 0 0 16px var(--shadow-strong);
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(188,144,61,0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+button:active::after {
+  width: 240px;
+  height: 240px;
+}
+
+/* ========== RESPONSIVE TWEAKS ========== */
+@media (max-width: 900px) {
+  .packages-grid { grid-template-columns: 1fr; }
+}
+
+/* ========== FOOTER ========== */
+.site-footer {
+  background-color: var(--ink) !important;
+  color: var(--gold) !important;
+}
+.site-footer a { color: var(--gold); }
+.site-footer a:hover { color: var(--gold-d); }
+</style>
+</head>
+<body>
+
+
+  <!-- HEADER / NAV -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <div class="brand">
+        <a href="index.html">
+          <img src="images/tr20250821_142802.png" alt="Pearmiact Logo" class="logo" />
+        </a>
+        <span class="slogan" style="font-size: 24px;">PEARMIACT</span>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="has-mega">
+            <a href="#">Services</a>
+            <div class="mega">
+              <a href="tutoring.html">Tutoring</a>
+              <a href="web-design.html">Web Design</a>
+              <a href="E-commerce.html">E-Commerce</a>
+              <a href="logos&graphic-design.html">Graphic Design (Logos & Branding)</a>
+              <a href="consulting.html">Business Consultancy</a>
+              <a href="clothing.html">Clothing</a>
+              <a href="logistics.html">Logistics</a>
+            </div>
+          </li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Actions -->
+      <div class="nav-actions">
+        <a class="btn primary" href="sign-up.html">
+          <button class="btn hollow" onclick="openQuote()">Get Started</button>
+        </a>
+
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+<!-- Consulting Intro -->
+<section class="services-intro container">
+  <h1>Consulting Services</h1>
+  <p>Strategic business consulting to optimize operations, increase revenue, and improve processes. Choose the package that fits your company's needs and growth stage.</p>
+</section>
+
+<!-- Packages Grid -->
+<section class="packages-grid container">
+
+  <!-- Starter Package -->
+  <div class="package-card">
+    <i class="fa-solid fa-star fa-2x"></i>
+    <h3>Starter</h3>
+    <p class="description">Basic business evaluation and guidance for startups.</p>
+    <p class="price">Starting at R1000</p>
+    <button class="toggle-features" onclick="toggleFeatures(this)">View Features</button>
+    <ul class="features">
+      <li>Initial business assessment</li>
+      <li>Basic operational recommendations</li>
+      <li>1 consultation session (1 hour)</li>
+    </ul>
+    <button class="get-started" onclick="location.href='contact.html'">Get Started</button>
+  </div>
+
+  <!-- Standard Package -->
+  <div class="package-card">
+    <i class="fa-solid fa-graduation-cap fa-2x"></i>
+    <h3>Standard</h3>
+    <p class="description">For growing businesses needing more comprehensive guidance.</p>
+    <p class="price">Starting at R3000</p>
+    <button class="toggle-features" onclick="toggleFeatures(this)">View Features</button>
+    <ul class="features">
+      <li>Business process review</li>
+      <li>Operational and marketing recommendations</li>
+      <li>3 consultation sessions (1 hour each)</li>
+      <li>Follow-up report</li>
+    </ul>
+    <button class="get-started" onclick="location.href='contact.html'">Get Started</button>
+  </div>
+
+  <!-- Premium Package -->
+  <div class="package-card">
+    <i class="fa-solid fa-crown fa-2x"></i>
+    <h3>Premium</h3>
+    <p class="description">Full-scale consulting for established businesses aiming to scale.</p>
+    <p class="price">Starting at R7000</p>
+    <button class="toggle-features" onclick="toggleFeatures(this)">View Features</button>
+    <ul class="features">
+      <li>Complete business audit</li>
+      <li>Market analysis & growth strategy</li>
+      <li>Operational optimization & risk assessment</li>
+      <li>6 consultation sessions</li>
+      <li>Detailed follow-up plan and resources</li>
+    </ul>
+    <button class="get-started" onclick="location.href='contact.html'">Get Started</button>
+  </div>
+
+</section>
+
+<footer class="site-footer" style="padding: 60px 40px; background-color:black; color: #bc903d;">
+    <div class="container footer-inner" style="display: flex; flex-wrap: wrap; gap: 30px;">
+      <div class="footer-col" style="flex: 1 1 300px; padding-right: 100px;">
+        <img src="images/tr20250821_142802.png" alt="PEARMIACT Logo" style="width:120px; margin-bottom: 5px;"  />
+        <div class="heading" style="padding:  5px; background-color: #000000; color: burlywood;  font-size: 0.8em;" >
+          <p>From Learning to Launch — We Build Your Future</p>
+        </div>
+        <div class="social-icons" style="color: burlywood; padding: 10px;font-size: 1.5em; margin-right: 70px;">
+          <i class="fa-brands fa-whatsapp"></i>
+          <i class="fa-brands fa-x-twitter"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-facebook"></i>
+        </div>
+      </div>
+      <div class="footer-col" style="flex: 1 1 150px;margin-right: 50px;">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html" style="color:burlywood;">All Services</a></li>
+          <li><a href="clothing.html" style="color:burlywood;">Clothing</a></li>
+          <li><a href="portfolio.html" style="color:burlywood;">Portfolio</a></li>
+          <li><a href="about.html" style="color:burlywood;">About Us</a></li>
+          <li><a href="contact.html" style="color:burlywood;">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col" style="flex: 1 1 150px; margin-right: 100px;">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy-policy.html" style="color:burlywood;">Privacy Policy</a></li>
+          <li><a href="terms-and-conditions.html" style="color:burlywood;">Terms & Conditions</a></li>
+          <li><a href="faq.html" style="color:burlywood;">FAQ</a></li>
+          <li><a href="refund-policy.html" style="color:burlywood;">Refund Policy</a></li>
+          <li><a href="shipping-delivery.html" style="color:burlywood;">Shipping & Delivery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col" style="flex: 1 1 150px; margin-left: 10px;">
+        <h4>Contacts</h4>
+        <p style="color: burlywood;">Email: info@pearmiact.com</p>
+        <p style="color: burlywood;">Phone: +27 77 366 3671</p>
+      </div>
+    </div>
+    <div class="site-copy" style="text-align:center; margin-top:20px;">
+      © <span id="year"></span> PEARMIACT — All rights reserved
+    </div>
+  </footer>           
+  
+
+<script src="pages/scripts/nav.js"></script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+function toggleFeatures(button) {
+  const features = button.nextElementSibling;
+  features.style.display = (features.style.display === 'block') ? 'none' : 'block';
+}
+</script>
+</body>
+</html>
+

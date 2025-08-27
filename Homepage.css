@@ -1,0 +1,354 @@
+/* === HERO SECTION === */
+.hero {
+  background: black;
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+}
+
+.hero-text {
+  flex: 1 1 480px;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: burlywood;
+}
+
+.hero-text .lead {
+  font-size: 1.15rem;
+  margin-bottom: 25px;
+  color: burlywood;
+}
+
+.hero-ctas .btn {
+  margin-right: 15px;
+}
+
+.hero-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* === ABOUT SECTION === */
+.about-preview {
+  margin: 60px auto;
+  text-align: center;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.about-preview h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.about-preview p {
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto 20px;
+  color: black;
+}
+
+.link-more {
+  font-weight: 600;
+  color: burlywood;
+  margin-top: 12px;
+  display: inline-block;
+}
+
+
+
+/* === FEATURED SERVICES - STATIC OVAL CARDS === */
+.featured-services {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.featured-services .service-card {
+  background: black;
+  color: burlywood;
+  padding: 35px 50px;
+  border-radius: 50px;
+  text-align: center;
+  width: 300px;       /* Fixed width */
+  height: 250px;      /* Fixed height */
+  flex: none;         /* Prevent flexbox resizing */
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-services .service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.featured-services .service-card i {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.featured-services .service-card h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.featured-services .service-card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* === CATCHY LINE - ABOUT SECTION === */
+.about-catchy-line {
+  text-align: center;
+  margin: 40px 0;
+  font-family: 'Poppins', 'Arial', sans-serif; /* unique, modern font */
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: burlywood; /* keep your brand color */
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+
+/* Optional: slightly animated effect */
+.about-catchy-line span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.about-catchy-line span:hover {
+  transform: scale(1.1);
+  color: #f0e0b0; /* lighter burlywood on hover */
+}
+
+
+
+
+/* === PORTFOLIO SECTION === */
+.portfolio-preview {
+  margin: 60px auto;
+  text-align: center;
+  max-width: 1000px;
+  padding: 0 20px;
+}
+
+.portfolio-preview h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.small-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.small-grid img {
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* === TESTIMONIALS SECTION === */
+.testimonials {
+  background: black;
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 60px;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: burlywood;
+}
+
+.testimony blockquote {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: burlywood;
+  margin: 0 auto 10px;
+  max-width: 700px;
+}
+
+.testimony cite {
+  display: block;
+  font-weight: 600;
+  color: burlywood;
+}
+
+/* === PRICING SECTION === */
+.pricing-blurb {
+  background-color: black;
+  color: burlywood;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 60px;
+}
+
+.pricing-blurb h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.8rem;
+}
+
+.pricing-blurb p {
+  margin: 0 0 20px 0;
+}
+
+.pricing-blurb .btn {
+  font-weight: 700;
+}
+
+/* === ABOUT SECTION ALT - OVAL FANCY === */
+.about-section-alt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: burlywood;
+  padding: 60px 30px;
+  border-radius: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-section-alt::before,
+.about-section-alt::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background-color: black;
+  opacity: 0.15;
+}
+
+.about-section-alt::before {
+  width: 150px;
+  height: 150px;
+  top: -50px;
+  left: -50px;
+}
+
+.about-section-alt::after {
+  width: 200px;
+  height: 200px;
+  bottom: -70px;
+  right: -70px;
+}
+
+.about-section-alt .about-content {
+  max-width: 750px;
+  text-align: left;
+  background-color: rgba(0,0,0,0.85);
+  padding: 30px 40px;
+  border-radius: 25px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+.about-section-alt h2 {
+  font-size: 1.5rem;
+  color: burlywood;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+.about-section-alt .intro {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: burlywood;
+}
+/* === ABOUT GRID CARDS - SIMPLE STYLE === */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.about-card {
+  background: black;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: left;
+  color: burlywood;
+}
+
+.about-card i {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.about-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.about-card p {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+
+
+
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .hero-inner {
+    flex-direction: column;
+  }
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  .hero-text .lead {
+    font-size: 1rem;
+  }
+  .small-grid img {
+    width: 100%;
+    height: auto;
+  }
+  .featured-services {
+    flex-direction: column;
+  }
+  .featured-services .service-card {
+    width: 300px;
+    height: 250px;
+    margin: 0 auto;
+  }
+}
+
+
+
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PEARMIACT — Blog</title>
+  <link rel="stylesheet" href="pages/webstyles/common.css">
+  <link rel="stylesheet" href="pages/webstyles/nav.css">
+  <link rel="stylesheet" href="pages/webstyles/blog.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <div class="brand">
+        <a href="index.html"><img src="images/tr20250821_142802.png" alt="Pearmiact Logo" class="logo" /></a>
+        <span class="slogan">Let Us Be Proactive</span>
+      </div>
+
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn hollow" onclick="openQuote()">Get a Quote</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Blog Intro -->
+  <section class="blog-intro container">
+    <h1>Our Blog</h1>
+    <p>Welcome to the PEARMIACT blog. Here we share insights, tips, industry trends, and updates about technology, business, web design, e-commerce, and more. Stay tuned!</p>
+  </section>
+
+  <!-- Blog Posts Grid -->
+  <section class="blog-posts container">
+    <div class="grid">
+      <!-- Sample Blog Post -->
+      <div class="blog-card">
+        <img src="images/blog-placeholder.png" alt="Blog Post Image" />
+        <h3>Blog Post Title 1</h3>
+        <p>Short description of the blog post content goes here. Give readers an insight of what the post is about.</p>
+        <a href="#" class="btn">Read More</a>
+      </div>
+      
+      <div class="blog-card">
+        <img src="images/blog-placeholder.png" alt="Blog Post Image" />
+        <h3>Blog Post Title 2</h3>
+        <p>Short description of the blog post content goes here. Give readers an insight of what the post is about.</p>
+        <a href="#" class="btn">Read More</a>
+      </div>
+
+      <div class="blog-card">
+        <img src="images/blog-placeholder.png" alt="Blog Post Image" />
+        <h3>Blog Post Title 3</h3>
+        <p>Short description of the blog post content goes here. Give readers an insight of what the post is about.</p>
+        <a href="#" class="btn">Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (same as homepage) -->
+  <footer class="site-footer" style="padding: 40px 20px; background-color: #0b0404; color: #bc903d;">
+    <div class="container footer-inner" style="display: flex; flex-wrap: wrap; gap: 30px;">
+      <div class="footer-col" style="flex: 1 1 300px;">
+        <img src="images/tr20250821_142802.png" alt="PEARMIACT Logo" style="width:120px; margin-bottom: 5px;"  />
+        <div class="social-icons" style="color: burlywood; padding: 30px; font-size: 1.5em;">
+          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+      <div class="footer-col" style="flex: 1 1 150px;">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html" style="color:burlywood;">All Services</a></li>
+          <li><a href="clothing.html" style="color:burlywood;">Clothing</a></li>
+          <li><a href="portfolio.html" style="color:burlywood;">Portfolio</a></li>
+          <li><a href="about.html" style="color:burlywood;">About Us</a></li>
+          <li><a href="contact.html" style="color:burlywood;">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col" style="flex: 1 1 150px;">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy-policy.html" style="color:burlywood;">Privacy Policy</a></li>
+          <li><a href="terms-and-conditions.html" style="color:burlywood;">Terms & Conditions</a></li>
+          <li><a href="faq.html" style="color:burlywood;">FAQ</a></li>
+          <li><a href="refund-policy.html" style="color:burlywood;">Refund Policy</a></li>
+          <li><a href="shipping-delivery.html" style="color:burlywood;">Shipping & Delivery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col" style="flex: 1 1 150px;">
+        <h4>Contacts</h4>
+        <p style="color: burlywood;">Email: info@pearmiact.com</p>
+        <p style="color: burlywood;">Phone: +27 77 366 3671</p>
+      </div>
+    </div>
+    <div class="site-copy" style="text-align:center; margin-top:20px;">
+      © <span id="year"></span> PEARMIACT — All rights reserved
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
+
+

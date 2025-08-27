@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Design — PEARMIACT</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="pages/webstyles/common.css">
+  <link rel="stylesheet" href="pages/webstyles/nav.css">
+  <style>
+    /* ========== THEME ========== */
+:root{
+  --gold: burlywood;          /* #DEB887 */
+  --gold-d: #a87b2b;          /* deeper gold for hovers */
+  --ink: #0b0404;             /* near-black brand text */
+  --paper: #ffffff;           /* card text base */
+  --shadow: rgba(0,0,0,0.15);
+  --shadow-strong: rgba(188,144,61,0.6); /* gold glow */
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  /* base gradient */
+  background: linear-gradient(135deg, #000, var(--gold), #000);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: var(--paper);
+}
+
+/* subtle gradient animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* Container helper if your common.css doesn't already add one */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* ========== INTRO SECTION ========== */
+.services-intro {
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+.services-intro h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  /* clean gold heading on dark bg */
+  color: var(--gold);
+}
+
+.services-intro p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: burlywood;
+}
+
+/* ========== PACKAGES GRID ========== */
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  gap: 28px;
+  padding: 45px 0 60px;
+}
+
+@media (max-width: 1024px) {
+  .packages-grid {
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .packages-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========== PACKAGE CARD ========== */
+.package-card {
+  background: black;
+  border-radius: 26px;
+  padding: 26px 20px;
+  text-align: center;
+  box-shadow: 0 6px 12px var(--shadow);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
+  overflow: hidden;
+  animation: floaty 7s ease-in-out infinite;
+}
+
+/* soft float */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* hover lift + gold aura */
+.package-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 0 22px var(--shadow-strong);
+}
+
+/* icon shimmer */
+.package-card i {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--gold), #fff8dc, var(--gold));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: iconShimmer 3s linear infinite;
+}
+@keyframes iconShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* headings & text inside card */
+.package-card h3 {
+  margin-top: 14px;
+  margin-bottom: 8px;
+  font-size: 1.45rem;
+  color: var(--paper);
+}
+
+.package-card p.description {
+  font-size: 0.98rem;
+  color: #f1e6cf;
+  margin-bottom: 12px;
+}
+
+.package-card .price {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+/* features list (revealed via JS) */
+.package-card .features {
+  display: none;            /* JS toggles block/none */
+  text-align: left;
+  margin-top: 10px;
+  color: #f7f2e8;
+  padding-left: 18px;
+}
+
+/* slide-in for each LI when visible */
+.package-card .features li {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideIn 0.5s ease forwards;
+  margin-bottom: 8px;
+}
+.package-card .features li:nth-child(1) { animation-delay: 0.05s; }
+.package-card .features li:nth-child(2) { animation-delay: 0.12s; }
+.package-card .features li:nth-child(3) { animation-delay: 0.19s; }
+.package-card .features li:nth-child(4) { animation-delay: 0.26s; }
+.package-card .features li:nth-child(5) { animation-delay: 0.33s; }
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* buttons */
+.package-card button.toggle-features {
+  background-color: var(--ink);
+  color: var(--gold);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 28px;
+  cursor: pointer;
+  font-weight: 700;
+  margin-bottom: 10px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.package-card button.toggle-features:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 14px rgba(0,0,0,0.35);
+}
+
+/* get started with ripple */
+.package-card button.get-started {
+  background-color: var(--gold);
+  color: var(--ink);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 28px;
+  cursor: pointer;
+  font-weight: 800;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+.package-card button.get-started:hover {
+  background-color: var(--gold-d);
+  box-shadow: 0 0 16px rgba(188,144,61,0.7);
+  transform: translateY(-1px);
+}
+.package-card button.get-started::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(188,144,61,0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+.package-card button.get-started:active::after {
+  width: 260px;
+  height: 260px;
+}
+
+/* small utility tweak: tighten last spacing in each card */
+.package-card .features + .get-started {
+  margin-top: 10px;
+}
+
+/* ========== ACCESSIBILITY/FOCUS STATES ========== */
+.package-card button:focus {
+  outline: 2px dashed var(--gold);
+  outline-offset: 3px;
+}
+
+/* ========== OPTIONAL: SUBTLE DIVIDERS INSIDE CARD ========== */
+.package-card .price::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 60%;
+  margin: 12px auto 0;
+  background: linear-gradient(90deg, transparent, rgba(188,144,61,0.45), transparent);
+}
+
+/* ========== FOOTER TUNE (keeps your colors) ========== */
+.site-footer {
+  background-color: var(--ink) !important;
+  color: var(--gold) !important;
+}
+.site-footer a { color: var(--gold); }
+.site-footer a:hover { color: var(--gold-d); }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <div class="brand">
+        <a href="index.html">
+          <img src="images/tr20250821_142802.png" alt="PEARMIACT Logo" class="logo" />
+        </a>
+        <span class="slogan">Let Us Be Proactive</span>
+      </div>
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html" aria-current="page">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn hollow" onclick="openQuote()">Get a Quote</button>
+        <button class="hamburger" id="hamburger" aria-label="menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Web Design Intro -->
+  <section class="services-intro container">
+    <h1>Web Design Packages</h1>
+    <p>From small business websites to fully responsive multi-page sites, PEARMIACT provides scalable Web Design solutions tailored for your goals.</p>
+  </section>
+
+  <!-- Packages Grid -->
+  <section class="packages-grid container">
+    <!-- Starter Package -->
+    <div class="package-card">
+      <i class="fa-solid fa-star fa-2x" style="color:#bc903d;"></i>
+      <h3>Starter</h3>
+      <p class="description">Small website for personal or business use.</p>
+      <p class="price">Starting at R500</p>
+      <button class="toggle-features">View Features</button>
+      <ul class="features">
+        <li>5-page responsive website</li>
+        <li>Mobile-friendly design</li>
+        <li>Basic SEO setup</li>
+      </ul>
+      <button class="get-started" onclick="location.href='sign-up.html'">Get Started</button>
+    </div>
+
+    <!-- Professional Package -->
+    <div class="package-card">
+      <i class="fa-solid fa-graduation-cap fa-2x" style="color:#bc903d;"></i>
+      <h3>Standard</h3>
+      <p class="description">Ideal for small businesses needing more advanced features.</p>
+      <p class="price">Starting at R1500</p>
+      <button class="toggle-features">View Features</button>
+      <ul class="features">
+        <li>10-page responsive website</li>
+        <li>Advanced contact forms</li>
+        <li>Social media integration</li>
+        <li>Comprehensive SEO setup</li>
+        <li>Mobile-friendly design</li>
+      </ul>
+      <button class="get-started" onclick="location.href='sign-up.html'">Get Started</button>
+    </div>
+
+    <!-- Premium Package -->
+    <div class="package-card">
+      <i class="fa-solid fa-crown fa-2x" style="color:#bc903d;"></i>
+      <h3>Premium</h3>
+      <p class="description">Full multi-page website with custom design and advanced functionality.</p>
+      <p class="price">Starting at R4000</p>
+      <button class="toggle-features">View Features</button>
+      <ul class="features">
+        <li>20+ page responsive website</li>
+        <li>Custom design & animations</li>
+        <li>Advanced forms and integrations</li>
+        <li>Comprehensive SEO setup</li>
+        <li>Mobile & tablet optimized</li>
+      </ul>
+      <button class="get-started" onclick="location.href='sign-up.html'">Get Started</button>
+    </div>
+  </section>
+
+  
+  
+  <footer class="site-footer" style="padding: 60px 40px; background-color:black; color: #bc903d;">
+    <div class="container footer-inner" style="display: flex; flex-wrap: wrap; gap: 30px;">
+      <div class="footer-col" style="flex: 1 1 300px; padding-right: 100px;">
+        <img src="images/tr20250821_142802.png" alt="PEARMIACT Logo" style="width:120px; margin-bottom: 5px;"  />
+        <div class="heading" style="padding:  5px; background-color: #000000; color: burlywood;  font-size: 0.8em;" >
+          <p>From Learning to Launch — We Build Your Future</p>
+        </div>
+        <div class="social-icons" style="color: burlywood; padding: 10px;font-size: 1.5em; margin-right: 70px;">
+          <i class="fa-brands fa-whatsapp"></i>
+          <i class="fa-brands fa-x-twitter"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-facebook"></i>
+        </div>
+      </div>
+      <div class="footer-col" style="flex: 1 1 150px;margin-right: 50px;">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html" style="color:burlywood;">All Services</a></li>
+          <li><a href="clothing.html" style="color:burlywood;">Clothing</a></li>
+          <li><a href="portfolio.html" style="color:burlywood;">Portfolio</a></li>
+          <li><a href="about.html" style="color:burlywood;">About Us</a></li>
+          <li><a href="contact.html" style="color:burlywood;">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col" style="flex: 1 1 150px; margin-right: 100px;">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy-policy.html" style="color:burlywood;">Privacy Policy</a></li>
+          <li><a href="terms-and-conditions.html" style="color:burlywood;">Terms & Conditions</a></li>
+          <li><a href="faq.html" style="color:burlywood;">FAQ</a></li>
+          <li><a href="refund-policy.html" style="color:burlywood;">Refund Policy</a></li>
+          <li><a href="shipping-delivery.html" style="color:burlywood;">Shipping & Delivery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col" style="flex: 1 1 150px; margin-left: 10px;">
+        <h4>Contacts</h4>
+        <p style="color: burlywood;">Email: info@pearmiact.com</p>
+        <p style="color: burlywood;">Phone: +27 77 366 3671</p>
+      </div>
+    </div>
+    <div class="site-copy" style="text-align:center; margin-top:20px;">
+      © <span id="year"></span> PEARMIACT — All rights reserved
+    </div>
+  </footer>   
+  <script src="pages/scripts/nav.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Toggle feature lists
+    const toggleButtons = document.querySelectorAll('.toggle-features');
+    toggleButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const features = btn.nextElementSibling;
+        features.style.display = features.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
+</body>
+</html>
+
+

@@ -1,0 +1,123 @@
+.site-header {
+  background-color: burlywood;
+  border-bottom: 1px solid white;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  max-height: 70px; /* reduce from 100px */
+  width: auto;      /* maintain aspect ratio */
+}
+@media (max-width: 920px) {
+  .logo {
+    max-height: 30px;
+  }
+}
+
+.slogan {
+  font-style: italic;
+  color:black;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  font-weight: 600;
+  color:black;
+  padding: 6px 0;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.has-mega {
+  position: relative; /* makes "Services" the anchor */
+}
+
+.mega {
+  position: absolute;
+  top: 100%;
+  left: 50%; /* position from the center of Services */
+  transform: translateX(-50%); /* align perfectly under Services */
+  background: burlywood;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  padding: 10px 15px;
+  display: none;
+  flex-direction: column;
+  min-width: 200px;
+  border-radius: 4px;
+  z-index: 9999;
+}
+
+/* show dropdown when hovering Services OR inside dropdown */
+.has-mega:hover .mega,
+.has-mega:focus-within .mega {
+  display: flex;
+  color: blanchedalmond;
+}
+
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color:black;
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .main-nav ul {
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    background-color: black;
+    border-top: 1px solid burlywood;
+    display: none;
+    padding: 10px 0;
+  }
+  .main-nav ul.show {
+    display: flex;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+

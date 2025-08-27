@@ -1,0 +1,137 @@
+/* === common.css - Global Styles === */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* dynamic gradient background */
+  background: linear-gradient(135deg, #000, burlywood, #000);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+
+  color: burlywood; /* default text color */
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+/* === Headings with shimmer === */
+h1, h2, h3, h4 {
+  color: burlywood;
+  font-weight: 600;
+  margin-top: 0;
+  line-height: 1.2;
+
+  background: linear-gradient(90deg, burlywood, #fff8dc, burlywood);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { background-position: 200% 0; opacity: 0.4; }
+}
+
+/* === Text elements === */
+p {
+  margin-bottom: 1.2em;
+  color: burlywood;
+}
+
+/* === Lists === */
+ul {
+  padding-left: 20px;
+  list-style: disc; /* default dots across site */
+  margin: 0 0 1em 0;
+}
+
+.site-footer ul {
+  list-style: disc;   /* ensures the dots show in footer */
+  padding-left: 20px; /* align neatly */
+  margin: 0;
+}
+
+/* === Links === */
+a {
+  color: burlywood;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: #fff8dc;
+  outline: none;
+}
+
+/* === Buttons === */
+.btn {
+  display: inline-block;
+  padding: 0.5em 1.3em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: center;
+  user-select: none;
+}
+
+.btn.primary {
+  background-color: burlywood;
+  color: black;
+}
+
+.btn.primary:hover,
+.btn.primary:focus {
+  background-color: burlywood;
+  outline: none;
+}
+
+.btn.hollow {
+  background-color: black;
+  border: 2px solid black;
+  color: burlywood;
+}
+
+.btn.hollow:hover,
+.btn.hollow:focus {
+  background-color: black;
+  color: burlywood;
+  outline: none;
+}
+
+/* === Images === */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+
+

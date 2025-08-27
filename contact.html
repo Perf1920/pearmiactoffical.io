@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — PEARMIACT</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="pages/webstyles/common.css">
+  <link rel="stylesheet" href="pages/webstyles/nav.css">
+  <style>
+    /* ================= PAGE BASE ================= */
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #000, burlywood, #000);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      color: burlywood;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* ================= SHIMMER HEADINGS ================= */
+    .contact-intro h1,
+    .contact-intro p {
+      background: linear-gradient(90deg, burlywood, black, burlywood);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 4s linear infinite;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% 0; opacity: 0.4; }
+      50% { opacity: 1; }
+      100% { background-position: 200% 0; opacity: 0.4; }
+    }
+
+    /* ================= CONTACT INTRO ================= */
+    .contact-intro {
+      text-align: center;
+      padding: 50px 20px 30px;
+    }
+
+    .contact-intro h1 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    .contact-intro p {
+      font-size: 1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* ================= CONTACT GRID ================= */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 15px;
+    }
+
+    @media (max-width: 900px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ================= CONTACT CARDS ================= */
+    .contact-info,
+    .contact-form {
+      background-color: black;
+      padding: 20px;
+      border-radius: 20px;
+      color: burlywood;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    }
+
+    /* ================= CONTACT INFO ================= */
+    .contact-info h3 {
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+      color: burlywood;
+    }
+
+    .contact-info p {
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-info a {
+      color: burlywood;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+      color: #fff8dc;
+    }
+
+    /* ================= CONTACT FORM ================= */
+    .contact-form h3 {
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+      color: burlywood;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 4px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 12px;
+      border: 1px solid burlywood;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      background: white;
+      color: black;
+    }
+
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: burlywood;
+      box-shadow: 0 0 10px rgba(222,184,135,0.7);
+      transform: scale(1.02);
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .contact-form button {
+      background-color: burlywood;
+      color: black;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 0.95rem;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: black;
+      color: burlywood;
+      box-shadow: 0 0 12px burlywood;
+    }
+
+    .contact-form button::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(222,184,135,0.4);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.5s ease, height 0.5s ease;
+    }
+
+    .contact-form button:active::after {
+      width: 250px;
+      height: 250px;
+    }
+
+    /* ================= BACK-TO-TOP ================= */
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: burlywood;
+      color: black;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 50%;
+      font-size: 16px;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 0 8px rgba(222,184,135,0.7);
+      z-index: 1000;
+    }
+
+    #backToTop:hover {
+      background: goldenrod;
+      color: burlywood;
+    }
+
+    /* ================= FOOTER ================= */
+    .site-footer {
+      padding: 60px 40px;
+      background-color: black;
+      color: burlywood;
+    }
+
+    .site-footer a {
+      color: burlywood;
+      text-decoration: none;
+    }
+
+    .site-footer a:hover {
+      color: #fff8dc;
+    }
+
+    .site-copy {
+      text-align:center;
+      margin-top:20px;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <!-- HEADER / NAV -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <div class="brand">
+        <a href="index.html">
+          <img src="images/tr20250821_142802.png" alt="Pearmiact Logo" class="logo" />
+        </a>
+        <span class="slogan" style="font-size: 24px;">PEARMIACT</span>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="has-mega">
+            <a href="#">Services</a>
+            <div class="mega">
+              <a href="tutoring.html">Tutoring</a>
+              <a href="web-design.html">Web Design</a>
+              <a href="E-commerce.html">E-Commerce</a>
+              <a href="logos&graphic-design.html">Graphic Design (Logos & Branding)</a>
+              <a href="consulting.html">Business Consultancy</a>
+              <a href="clothing.html">Clothing</a>
+              <a href="logistics.html">Logistics</a>
+            </div>
+          </li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Actions -->
+      <div class="nav-actions">
+        <a class="btn primary" href="sign-up.html">
+          <button class="btn hollow" onclick="openQuote()">Get Started</button>
+        </a>
+
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Intro -->
+  <section class="contact-intro container reveal">
+    <h1>Contact Us</h1>
+    <p>
+      Fill out the form below to get started with your desired service or reach out 
+      to us for more information. Our team will get back to you promptly.
+    </p>
+  </section>
+
+  <!-- Contact Section -->
+  <div class="contact-container container">
+    
+    <!-- Contact Info -->
+    <div class="contact-info reveal">
+      <h3>Get In Touch</h3>
+      <p><i class="fa-solid fa-phone"></i> Phone: +27 77 366 3671</p>
+      <p><i class="fa-brands fa-whatsapp"></i> WhatsApp: +27 77 366 3671</p>
+      <p><i class="fa-solid fa-envelope"></i> Email: info@pearmiact.com</p>
+      <p><i class="fa-solid fa-location-dot"></i> Location: 31 Central Avenue,Edenvale,1609, Johannesburg, South Africa</p>
+      <div class="map-container">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.042023495162!2d28.159499574971168!3d-26.1301727609623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e951300806bb0df%3A0x63ba30e5f17e0c0a!2s31%20Central%20Ave%2C%20Eastleigh%2C%20Edenvale%2C%201609!5e0!3m2!1sen!2sza!4v1756149076819!5m2!1sen!2sza" 
+      width="100%" 
+      height="400" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+      <p><i class="fa-solid fa-clock"></i> 
+        Business Hours:
+         Monday -Friday 09:00-16:00, Saturday 09:00- 14:00, Sunday Closed</p>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form reveal">
+      <h3>Send Us a Message</h3>
+      <form action="submit_form.php" method="POST">
+        <label for="fullname">Full Name *</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Your full name" required>
+        
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" placeholder="Your email address" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+
+        <label for="businessname">Business Name</label>
+        <input type="text" id="businessname" name="businessname" placeholder="Your business name">
+
+        <label for="businesstype">Business Type</label>
+        <select id="businesstype" name="businesstype">
+          <option value="">Select business type</option>
+          <option value="startup">Startup</option>
+          <option value="small">Small Business</option>
+          <option value="medium">Medium Business</option>
+          <option value="corporate">Corporate</option>
+        </select>
+
+        <label for="service">Service Interested In</label>
+        <select id="service" name="service">
+          <option value="">Select service</option>
+          <option value="tutoring">Tutoring</option>
+          <option value="webdesign">Web Design</option>
+          <option value="ecommerce">E-Commerce</option>
+          <option value="graphic">Graphic Design</option>
+          <option value="consulting">Consulting</option>
+        </select>
+
+        <label for="message">Message / Details</label>
+        <textarea id="message" name="message" placeholder="Your message or project details"></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner" style="display:flex; flex-wrap:wrap; gap:30px;">
+      <div class="footer-col" style="flex:1 1 300px;">
+        <img src="images/tr20250821_142802.png" alt="PEARMIACT Logo" style="width:120px; margin-bottom:5px;">
+        <p style="padding:5px; font-size:0.8em;">From Learning to Launch — We Build Your Future</p>
+        <div class="social-icons" style="font-size:1.5em; padding:10px;">
+          <i class="fa-brands fa-whatsapp"></i>
+          <i class="fa-brands fa-x-twitter"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-facebook"></i>
+        </div>
+      </div>
+      <div class="footer-col" style="flex:1 1 150px;">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">All Services</a></li>
+          <li><a href="clothing.html">Clothing</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col" style="flex:1 1 150px;">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="refund-policy.html">Refund Policy</a></li>
+          <li><a href="shipping-delivery.html">Shipping & Delivery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col" style="flex:1 1 150px;">
+        <h4>Contacts</h4>
+        <p>Email: info@pearmiact.com</p>
+        <p>Phone: +27 77 366 3671</p>
+      </div>
+    </div>
+    <div class="site-copy">
+      © <span id="year"></span> PEARMIACT — All rights reserved
+    </div>
+  </footer>
+
+  <!-- Back-to-Top Button -->
+  <button id="backToTop"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="pages/scripts/nav.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const reveals = document.querySelectorAll(".reveal");
+    window.addEventListener("scroll", () => {
+      reveals.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) el.classList.add("active");
+      });
+    });
+
+    const backToTop = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      backToTop.style.display = window.scrollY > 400 ? "block" : "none";
+    });
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    document.querySelector(".contact-form form").addEventListener("submit", e => {
+      e.preventDefault();
+      alert("✅ Message sent successfully! We will get back to you soon.");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PEARMIACT — Home</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="pages/webstyles/common.css" />
+  <link rel="stylesheet" href="pages/webstyles/nav.css" />
+  <link rel="stylesheet" href="pages/webstyles/Homepage.css" />
+  <link rel="stylesheet" href="pages/webstyles/portfolio.css" />
+</head>
+<body>
+  
+  <!-- HEADER / NAV -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <div class="brand">
+        <a href="index.html">
+          <img src="images/tr20250821_142802.png" alt="Pearmiact Logo" class="logo" />
+        </a>
+        <span class="slogan" style="font-size: 24px;">PEARMIACT</span>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="has-mega">
+            <a href="#">Services</a>
+            <div class="mega">
+              <a href="tutoring.html">Tutoring</a>
+              <a href="web-design.html">Web Design</a>
+              <a href="E-commerce.html">E-Commerce</a>
+              <a href="logos&graphic-design.html">Graphic Design (Logos & Branding)</a>
+              <a href="consulting.html">Business Consultancy</a>
+              <a href="clothing.html">Clothing</a>
+              <a href="logistics.html">Logistics</a>
+            </div>
+          </li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Actions -->
+      <div class="nav-actions">
+        <a class="btn primary" href="sign-up.html">
+          <button class="btn hollow" onclick="openQuote()">Get Started</button>
+        </a>
+
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>From Learning to Launch — We Build Your Future</h1>
+        <p class="lead">
+          Professional web designs, smart eCommerce stores, reliable tech
+          support, business consultancy and creative apparel.
+        </p>
+        <div class="hero-ctas">
+          <a class="btn primary" href="services.html">Explore Services</a>
+          <a class="btn" href="contact.html">Contact Us</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/hero.png" alt="Hero image" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SNIPPET -->
+  <section class="about-section-alt container">
+    <div class="about-content">
+      <p class="intro">
+        At PEARMIACT, we believe in being <strong>proactive</strong>.  
+        From digital solutions to business innovation, we design strategies that 
+        move people, ideas, and brands forward.
+      </p>
+    </div>
+  </section>
+
+  <!-- FEATURED SERVICES -->
+  <section class="featured-services">
+    <div class="service-card">
+      <i class="fa-solid fa-laptop-code"></i>
+      <h3>Web Design</h3>
+      <p>Responsive, modern websites that convert visitors into customers.</p>
+    </div>
+
+    <div class="service-card">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <h3>E-Commerce</h3>
+      <p>Smart online stores with fast, smooth shopping experiences.</p>
+    </div>
+
+    <div class="service-card">
+      <i class="fa-solid fa-briefcase"></i>
+      <h3>Business Consulting</h3>
+      <p>Solutions & strategies that help your business grow efficiently.</p>
+    </div>
+
+    <div class="service-card">
+      <i class="fa-solid fa-object-group"></i>
+      <h3>Graphic Design</h3>
+      <p>Creative branding, logos, and visuals that stand out.</p>
+    </div>
+  </section>
+
+  <!-- CATCHY LINE -->
+  <section class="about-catchy-line">
+    <p><span>Your vision. Our design. Endless possibilities.</span></p>
+  </section>
+
+  <!-- ABOUT GRID -->
+  <section class="about-grid" style="margin-top: 100px;">
+    <div class="about-card">
+      <i class="fa-solid fa-laptop-code"></i>
+      <h3>What We Do ?</h3>
+      <p>
+        We craft <strong>user-friendly websites</strong>, build smart 
+        <strong>e-commerce platforms</strong>, deliver <strong>creative design</strong>, 
+        and provide <strong>consulting & logistics solutions</strong>.
+      </p>
+    </div>
+
+    <div class="about-card">
+      <i class="fa-solid fa-users"></i>
+      <h3>Who We Serve ?</h3>
+      <p>
+        Entrepreneurs, startups, learners, and established businesses 
+        looking to grow, adapt, and stay competitive in the digital era.
+      </p>
+    </div>
+
+    <div class="about-card">
+      <i class="fa-solid fa-bullseye"></i>
+      <h3>Our Objective ?</h3>
+      <p>
+        To take your idea, project, or business and move it from concept 
+        to <strong>impact</strong> — with growth-focused solutions and 
+        long-term sustainability.
+      </p>
+    </div>
+
+    <div class="about-card">
+      <i class="fa-solid fa-lightbulb"></i>
+      <h3>Why Choose Us ?</h3>
+      <p>
+        Because we don’t just deliver services — we deliver <strong>results</strong>.  
+        Every project is tailored, every solution is proactive, and every client is a partner.
+      </p>
+    </div>
+  </section>
+
+  <!-- PRICING BLURB -->
+  <section class="pricing-blurb container" style="margin-top: 100px;">
+    <h3>Designs range from <strong>R1299— R3999</strong></h3>
+    <p>
+      Pricing depends on features, integrations and custom requirements. Get a
+      personalised quote.
+    </p>
+    <a class="btn primary" href="contact.html">Get a Quote</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" style="padding: 60px 40px; background-color:black; color: #bc903d;">
+    <div class="container footer-inner" style="display: flex; flex-wrap: wrap; gap: 30px;">
+      <div class="footer-col" style="flex: 1 1 300px; padding-right: 100px;">
+        <img src="images/tr20250821_142802.png" alt="PEARMIACT Logo" style="width:120px; margin-bottom: 5px;"  />
+        <div class="heading" style="padding:  5px; background-color: #000000; color: burlywood;  font-size: 0.8em;" >
+          <p>From Learning to Launch — We Build Your Future</p>
+        </div>
+        <div class="social-icons" style="color: burlywood; padding: 10px;font-size: 1.5em; margin-right: 70px;">
+          <i class="fa-brands fa-whatsapp"></i>
+          <i class="fa-brands fa-x-twitter"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-facebook"></i>
+        </div>
+      </div>
+      <div class="footer-col" style="flex: 1 1 150px;margin-right: 50px;">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html" style="color:burlywood;">All Services</a></li>
+          <li><a href="clothing.html" style="color:burlywood;">Clothing</a></li>
+          <li><a href="portfolio.html" style="color:burlywood;">Portfolio</a></li>
+          <li><a href="about.html" style="color:burlywood;">About Us</a></li>
+          <li><a href="contact.html" style="color:burlywood;">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col" style="flex: 1 1 150px; margin-right: 100px;">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy-policy.html" style="color:burlywood;">Privacy Policy</a></li>
+          <li><a href="terms-and-conditions.html" style="color:burlywood;">Terms & Conditions</a></li>
+          <li><a href="faq.html" style="color:burlywood;">FAQ</a></li>
+          <li><a href="refund-policy.html" style="color:burlywood;">Refund Policy</a></li>
+          <li><a href="shipping-delivery.html" style="color:burlywood;">Shipping & Delivery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col" style="flex: 1 1 150px; margin-left: 10px;">
+        <h4>Contacts</h4>
+        <p style="color: burlywood;">Email: info@pearmiact.com</p>
+        <p style="color: burlywood;">Phone: +27 77 366 3671</p>
+      </div>
+    </div>
+    <div class="site-copy" style="text-align:center; margin-top:20px;color: burlywood;">
+      © <span id="year"></span> PEARMIACT — All rights reserved
+    </div>
+  </footer>           
+
+  <!-- JS -->
+  <script src="pages/scripts/nav.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+ document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('mainNav');
+
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('show');
+  });
+
+  // Update footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+});
+
+
+    // Services dropdown toggle on mobile
+    const serviceParent = document.querySelector('.has-mega');
+    const serviceLink = serviceParent.querySelector('a');
+
+    serviceLink.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        serviceParent.classList.toggle('open');
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
