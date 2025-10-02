@@ -4,261 +4,1540 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PEARMIACT — Home</title>
+    
+ <meta name="description" content="PEARMIACT engineers digital experiences that elevate brands. From responsive websites to e-commerce platforms, we turn ideas into functional, memorable online solutions." />
+   <meta name="keywords" content="Digital Solutions, Web Design, Graphic Design, E-Commerce, Branding, Tech Support, Online Marketing, Business Websites, Responsive Websites" />
+  <meta name="author" content="PEARMIACT" />
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
-
-  <link rel="stylesheet" href="pages/webstyles/common.css" />
+  <!-- CSS -->
   <link rel="stylesheet" href="pages/webstyles/nav.css" />
-  <link rel="stylesheet" href="pages/webstyles/Homepage.css" />
-  <link rel="stylesheet" href="pages/webstyles/portfolio.css" />
+<link rel="stylesheet" href="pages/webstyles/common.css">
+
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "PEARMIACT",
+  "url": "https://pearmiact.tech",
+  "logo": "https://pearmiact.tech/images/tr20250821_142802.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "31 Central Avenue",
+    "addressLocality": "Edenvale",
+    "postalCode": "1609",
+    "addressCountry": "ZA"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+27-73-663-671",
+    "contactType": "customer service",
+    "areaServed": "ZA",
+    "availableLanguage": "English"
+  },
+  "sameAs": [
+    "https://x.com/Pearmaict",
+    "https://www.instagram.com/pearmiact/",
+    "https://www.facebook.com/profile.php?id=61580539605200",
+    "https://www.linkedin.com/in/perfect-siboza-b4821233b/"
+  ],
+  "email": "info@pearmiact.tech",
+  "openingHours": "Mo-Fr 08:00-16:30"
+}
+</script>
+   
+
+
+
 </head>
 <body>
-  
-  <!-- HEADER / NAV -->
-  <header class="site-header">
-    <div class="container nav-inner">
-      <div class="brand">
-        <a href="index.html">
-          <img src="images/tr20250821_142802.png" alt="Pearmiact Logo" class="logo" />
-        </a>
-        <span class="slogan" style="font-size: 24px;">PEARMIACT</span>
-      </div>
+<style>
 
-      <!-- Navigation -->
-      <nav class="main-nav" id="mainNav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li class="has-mega">
-            <a href="#">Services</a>
-            <div class="mega">
-              <a href="tutoring.html">Tutoring</a>
-              <a href="web-design.html">Web Design</a>
-              <a href="E-commerce.html">E-Commerce</a>
-              <a href="logos&graphic-design.html">Graphic Design (Logos & Branding)</a>
-              <a href="consulting.html">Business Consultancy</a>
-              <a href="clothing.html">Clothing</a>
-              <a href="logistics.html">Logistics</a>
-            </div>
-          </li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-      <!-- Right Actions -->
-      <div class="nav-actions">
-        <a class="btn primary" href="sign-up.html">
-          <button class="btn hollow" onclick="openQuote()">Get Started</button>
-        </a>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
-        <!-- Hamburger -->
-        <button class="hamburger" id="hamburger" aria-label="menu">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-      </div>
+  /* dynamic gradient background */
+  background: linear-gradient(135deg, #000, black, #000);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+
+  color: burlywood; /* default text color */
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+/* === Headings with shimmer === */
+h1, h2, h3, h4 {
+  color: burlywood;
+  font-weight: 600;
+  margin-top: 0;
+  line-height: 1.2;
+
+  background: linear-gradient(90deg, burlywood, #fff8dc, burlywood);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { background-position: 200% 0; opacity: 0.4; }
+}
+
+/* === Text elements === */
+p {
+  margin-bottom: 1.2em;
+  color: burlywood;
+}
+
+/* === Lists === */
+ul {
+  padding-left: 20px;
+  list-style: disc; /* default dots across site */
+  margin: 0 0 1em 0;
+}
+
+section {
+  padding: 80px 20px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  background: burlywood;
+  color: #000;
+  font-weight: 600;
+  border-radius: 8px;
+  margin: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+.site-header {
+  background-color: burlywood;
+  border-bottom: 1px solid white;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.brand { display:flex; align-items:center; gap:15px; }
+.logo { max-height:100px; width:auto; }
+@media (max-width:920px){ .logo { max-height:30px; } }
+
+/* main nav list (desktop) */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+.main-nav li { position: relative; }
+.main-nav a {
+  font-weight: 600;
+  color: black;
+  padding: 6px 0;
+  display: inline-block;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+.main-nav a:hover { color: burlywood; }
+
+/* MEGA MENU - desktop */
+.has-mega { position: relative; }
+.mega {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  padding: 10px 15px;
+  display: none;
+  flex-direction: column;
+  min-width: 200px;
+  border-radius: 4px;
+  z-index: 9999;
+}
+.has-mega:hover .mega,
+.has-mega:focus-within .mega { display:flex; color: blanchedalmond; }
+.mega a { padding: 10px; color: antiquewhite; text-align:left; }
+
+/* NAV ACTIONS & BUTTONS */
+.nav-actions { display:flex; align-items:center; gap:15px; }
+.hamburger {
+  background:none; border:none; font-size:1.6rem; cursor:pointer; color:black; display:none;
+}
+.btn.hollow {
+  background: transparent;
+  border: 2px solid black;
+  color: black;
+  padding: 8px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight:600;
+  transition: all 0.25s ease;
+}
+.btn.hollow:hover {
+  background: black;
+  color: burlywood;
+}
+
+/* mobile-only / desktop-only helpers */
+.mobile-only { display: none; }
+.desktop-only { display: inline-block; }
+
+/* === MOBILE (<=900px) === */
+@media (max-width: 900px) {
+  .main-nav ul {
+    /* transform into a slide-down panel (same ul) */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;                /* sits under header */
+    left: 0;
+    right: 0;
+    background-color: black;
+    border-top: 1px solid burlywood;
+    max-height: 0;            /* closed */
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    padding: 0 0;             /* fill when opened */
+    align-items: center;      /* center links horizontally */
+    gap: 10px;
+    z-index: 9999;
+  }
+
+  /* when toggled open */
+  .main-nav ul.show {
+    max-height: 520px;       /* large enough for links + button */
+    padding: 18px 0 25px;
+  }
+
+  .main-nav ul li {
+    width: 100%;
+    display: flex;
+    justify-content: center;  /* center each link */
+  }
+
+  .main-nav a {
+    color: antiquewhite;
+    padding: 12px;
+    text-align: center;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  /* mobile-only Get Started (inside the same ul) */
+  .mobile-only {
+    display: block;
+    padding: 0 16px;
+    margin-top: 6px;
+  }
+  .mobile-only .btn {
+    width: calc(100% - 32px);
+    max-width: 420px;
+    background: burlywood;
+    color: black;
+    padding: 12px 18px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 700;
+  }
+  .mobile-only .btn:hover { background: #f6dfa8; }
+
+  /* hide desktop button, show hamburger */
+  .desktop-only { display: none; }
+  .hamburger { display: block; color: antiquewhite; }
+
+  /* ensure mega menu doesn't break layout: on mobile it's hidden by default,
+     toggled with JS using the class .show-mobile (see script) */
+  .mega { position: static; display: none; width: 100%; border-radius: 0; padding: 8px 0; box-shadow: none; }
+  .mega a { text-align: center; width: 100%; padding: 10px 0; }
+  .mega.show-mobile { display:flex; flex-direction: column; }
+}
+
+/* small polish */
+.caret { margin-left:6px; font-size:0.9rem; }
+
+
+
+.hero {position:relative; text-align:center; padding:120px 20px; overflow:hidden;background-color:black;}
+    #particles-js {position:absolute; top:0; left:0; width:100%; height:100%; z-index:0;}
+    .hero-inner {position:relative; z-index:2;}
+    .hero h1 {font-size:3rem;}
+    .hero p {font-size:1.3rem; max-width:800px; margin:auto; margin-bottom:20px;}
+.about-section {
+  position: relative;
+  padding: 80px 20px;
+  background-color: #000;
+  color: white;
+  overflow: hidden;
+}
+
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.about-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+  gap: 40px;
+}
+
+.about-image {
+  position: relative;
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  filter: brightness(70%);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+.about-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-highlights {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.about-highlights li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.about-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: burlywood;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.about-button:hover {
+  background-color: #e0c080;
+}
+.process {
+  text-align: center;
+  padding: 60px 20px;
+  background: #000; /* black background */
+  color: burlywood;
+}
+
+.process h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: burlywood;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  justify-content: center;
+}
+
+.step-card {
+  background: #111;
+  border: 2px solid burlywood;
+  border-radius: 20px;
+  padding: 30px 20px;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(222, 184, 135, 0.2);
+  cursor: pointer;
+  transform: translateY(0);
+}
+
+.step-card i {
+  font-size: 2.5rem;
+  color: burlywood;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.step-card h4 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.step-card p {
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+.step-card:hover {
+  background: burlywood;
+  color: #000;
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(222, 184, 135, 0.5);
+}
+
+.step-card:hover i {
+  color: #000;
+  transform: rotate(15deg) scale(1.2);
+}
+
+.featured-services {
+  padding: 60px 20px;
+  background: burlywood;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: burlywood;
+}
+
+.slider-container {
+
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider-wrapper {
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.6s ease;
+}
+
+.service-card {
+  flex: 0 0 280px;
+  background: #222;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  color: burlywood;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.service-card i {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: burlywood;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(255,215,128,0.3);
+}
+
+/* Slider Buttons */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.7);
+  color: burlywood;
+  border: none;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 10;
+}
+
+.slider-btn:hover {
+  background: burlywood;
+  color: #000;
+}
+
+.slider-btn.prev {
+  left: -20px;
+}
+
+.slider-btn.next {
+  right: -20px;
+}
+
+/* === PLANS SLIDER === */
+.pricing-plans {
+  padding: 60px 20px;
+  background: #000;
+  color: burlywood;
+  text-align: center;
+}
+
+.plans-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.plans-wrapper {
+  overflow: hidden;
+}
+
+.plans-slider {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.6s ease;
+}
+
+.plan-card {
+  flex: 0 0 350px;
+  background: #111;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(255,215,128,0.25);
+}
+
+.plan-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.plan-card .price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.plan-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.plan-card ul li {
+  margin: 8px 0;
+  font-size: 0.95rem;
+}
+
+.plan-card .btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: burlywood;
+  color: #000;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.plan-card .btn:hover {
+  background: #e0c188;
+  transform: translateY(-3px);
+}
+
+/* Slider Buttons */
+.plans-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.7);
+  color: burlywood;
+  border: none;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 10;
+}
+
+.plans-btn:hover {
+  background: burlywood;
+  color: #000;
+}
+
+.plans-btn.prev {
+  left: -20px;
+}
+
+.plans-btn.next {
+  right: -20px;
+}
+
+
+/* PRICING */
+.pricing {
+  text-align: center;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.plan {
+  background: #111;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.plan h3 {
+  margin-bottom: 10px;
+}
+
+.plan ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.plan ul li {
+  margin-bottom: 10px;
+}
+
+.faq {
+  padding: 60px 20px;
+  background: #000;
+  color: burlywood;
+  text-align: center;
+}
+
+.faq h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: burlywood;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq-item {
+  border: 2px solid burlywood;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  background: #111;
+  box-shadow: 0 4px 10px rgba(222, 184, 135, 0.2);
+  transition: all 0.3s ease;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 18px 20px;
+  font-size: 1.1rem;
+  background: none;
+  border: none;
+  outline: none;
+  color: burlywood;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-question i {
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+  padding: 0 20px;
+  background: #1a1a1a;
+}
+
+.faq-answer p {
+  margin: 15px 0;
+  color: #ddd;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px; /* adjustable for content */
+  padding: 15px 20px;
+}
+
+.faq-item.active .faq-question i {
+  transform: rotate(45deg);
+  color: #000;
+  background: burlywood;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+/* TESTIMONIALS */
+.testimonials {
+  text-align: center;
+}
+
+.testimonial-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.testimonial {
+  flex: 0 0 300px;
+  background: #222;
+  padding: 20px;
+  border-radius: 12px;
+  scroll-snap-align: start;
+  text-align: left;
+}
+
+.cta {
+  background: linear-gradient(135deg, #000 60%, burlywood 40%);
+  padding: 80px 20px;
+  text-align: center;
+  color: burlywood;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: burlywood;
+}
+
+.cta p {
+  font-size: 1.2rem;
+  margin-bottom: 35px;
+  color: #f1f1f1;
+}
+
+.cta .btn {
+  display: inline-block;
+  background: burlywood;
+  color: #000;
+  padding: 14px 35px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 20px rgba(222, 184, 135, 0.4);
+}
+
+.cta .btn:hover {
+  background: #000;
+  color: burlywood;
+  box-shadow: 0 0 25px burlywood, 0 0 50px burlywood;
+  transform: translateY(-4px) scale(1.05);
+}
+
+
+.site-footer {
+  padding: 60px 40px;
+  background: #000;
+  color: burlywood;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-col {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.footer-logo {
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 0.9rem;
+  color: burlywood;
+  margin-bottom: 15px;
+}
+
+.social-icons a {
+  color: burlywood;
+  font-size: 1.5em;
+  margin-right: 15px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #fff;
+  transform: scale(1.2);
+}
+
+.footer-col h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: burlywood;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+
+.footer-col ul li a,
+.footer-col p a {
+  color: burlywood;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover,
+.footer-col p a:hover {
+  color: #fff;
+}
+
+.site-copy {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: burlywood;
+  border-top: 1px solid rgba(222, 184, 135, 0.3);
+  padding-top: 15px;
+}
+</style>
+
+<header class="site-header">
+  <div class="container nav-inner">
+    <!-- Brand / logo -->
+    <div class="brand">
+      <a href="index.html">
+        <img src="images/tr20250821_142802.png" alt="PEARMIACT Logo" class="logo" />
+      </a>
     </div>
-  </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-text">
-        <h1>From Learning to Launch — We Build Your Future</h1>
-        <p class="lead">
-          Professional web designs, smart eCommerce stores, reliable tech
-          support, business consultancy and creative apparel.
-        </p>
-        <div class="hero-ctas">
-          <a class="btn primary" href="services.html">Explore Services</a>
-          <a class="btn" href="contact.html">Contact Us</a>
-        </div>
-      </div>
-      <div class="hero-image">
-        <img src="images/hero.png" alt="Hero image" />
-      </div>
+    <!-- Single nav -->
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <ul id="navList">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+
+        <!-- Services (has mega) -->
+        <li class="has-mega">
+          <a href="services.html" class="has-mega-toggle" aria-haspopup="true" aria-expanded="false">
+            Services <span class="caret">▾</span>
+          </a>
+          <div class="mega" aria-hidden="true">
+            <a href="web-design.html">Web Design</a>
+            <a href="logos&graphic-design.html">Graphic Design</a>
+           
+          </div>
+        </li>
+
+        <li><a href="contact.html">Contact</a></li>
+
+        <!-- Mobile-only Get Started (inside the same ul) -->
+        <li class="mobile-only">
+         <a href="sign-up.html" class="btn hollow">Get Started</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Nav actions (desktop Get Started + hamburger) -->
+    <div class="nav-actions">
+   <a href="sign-up.html"<button class="btn hollow desktop-only" onclick="openQuote()">Get Started</button></a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </div>
-  </section>
+  </div>
+</header>
 
-  <!-- ABOUT SNIPPET -->
-  <section class="about-section-alt container">
+<!-- HERO -->
+<section class="hero">
+  <div id="particles-js"></div>
+  <div class="hero-inner">
+    <h1>From Learning to Launch We Build Your Future</h1>
+    <p>We craft stunning websites, build memorable brands, and deliver results-driven digital solutions for businesses worldwide.</p>
+    <a href="services.html" class="btn">Our Services</a>
+    <a href="contact.html" class="btn">Get a Quote</a>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about-section">
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- Content Wrapper -->
+  <div class="about-wrapper">
+    <!-- Image Block (Left) -->
+    <div class="about-image">
+      <div class="image-overlay"></div>
+      <img src="images/Hero2.png" alt="Team at work">
+    </div>
+
+    <!-- Text Block (Right) -->
     <div class="about-content">
-      <p class="intro">
-        At PEARMIACT, we believe in being <strong>proactive</strong>.  
-        From digital solutions to business innovation, we design strategies that 
-        move people, ideas, and brands forward.
-      </p>
-    </div>
-  </section>
-
-  <!-- FEATURED SERVICES -->
-  <section class="featured-services">
-    <div class="service-card">
-      <i class="fa-solid fa-laptop-code"></i>
-      <h3>Web Design</h3>
-      <p>Responsive, modern websites that convert visitors into customers.</p>
-    </div>
-
-    <div class="service-card">
-      <i class="fa-solid fa-cart-shopping"></i>
-      <h3>E-Commerce</h3>
-      <p>Smart online stores with fast, smooth shopping experiences.</p>
-    </div>
-
-    <div class="service-card">
-      <i class="fa-solid fa-briefcase"></i>
-      <h3>Business Consulting</h3>
-      <p>Solutions & strategies that help your business grow efficiently.</p>
-    </div>
-
-    <div class="service-card">
-      <i class="fa-solid fa-object-group"></i>
-      <h3>Graphic Design</h3>
-      <p>Creative branding, logos, and visuals that stand out.</p>
-    </div>
-  </section>
-
-  <!-- CATCHY LINE -->
-  <section class="about-catchy-line">
-    <p><span>Your vision. Our design. Endless possibilities.</span></p>
-  </section>
-
-  <!-- ABOUT GRID -->
-  <section class="about-grid" style="margin-top: 100px;">
-    <div class="about-card">
-      <i class="fa-solid fa-laptop-code"></i>
-      <h3>What We Do ?</h3>
+      <h2>Where Vision Becomes Digital Power</h2>
       <p>
-        We craft <strong>user-friendly websites</strong>, build smart 
-        <strong>e-commerce platforms</strong>, deliver <strong>creative design</strong>, 
-        and provide <strong>consulting & logistics solutions</strong>.
+        At PEARMIACT, we don’t just build websites—we engineer digital experiences that elevate your brand. Our team blends strategic thinking, technical precision, and design flair to craft solutions that are as functional as they are unforgettable.
       </p>
-    </div>
 
-    <div class="about-card">
-      <i class="fa-solid fa-users"></i>
-      <h3>Who We Serve ?</h3>
-      <p>
-        Entrepreneurs, startups, learners, and established businesses 
-        looking to grow, adapt, and stay competitive in the digital era.
-      </p>
-    </div>
+      <ul class="about-highlights">
+        <li><strong>Elegant Design:</strong> Sophisticated visuals that reflect your brand’s essence</li>
+        <li><strong>Smart Architecture:</strong> Lean, scalable code built for long-term success</li>
+        <li><strong>Device Harmony:</strong> Flawless performance across all screen sizes</li>
+        <li><strong>Reliability First:</strong> Every detail tested for a seamless user journey</li>
+      </ul>
 
-    <div class="about-card">
-      <i class="fa-solid fa-bullseye"></i>
-      <h3>Our Objective ?</h3>
-      <p>
-        To take your idea, project, or business and move it from concept 
-        to <strong>impact</strong> — with growth-focused solutions and 
-        long-term sustainability.
-      </p>
+      <a href="about.html" class="about-button">Explore Our Story</a>
     </div>
+  </div>
+</section>
 
-    <div class="about-card">
+<!-- SERVICES SLIDER -->
+<section class="featured-services">
+  <h2 class="section-title">Our Core Services</h2>
+  <div class="slider-container">
+    <button class="slider-btn prev"><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="slider-wrapper">
+      <div class="slider">
+        <div class="service-card">
+          <i class="fa-solid fa-laptop-code"></i>
+          <h3>Web Design</h3>
+          <p>Responsive, modern websites that convert visitors into customers.</p>
+        </div>
+        <div class="service-card">
+          <i class="fa-solid fa-object-group"></i>
+          <h3>Graphic Design</h3>
+          <p>Creative branding, logos, and visuals that stand out.</p>
+        </div>
+        <div class="service-card">
+          <i class="fa-solid fa-store"></i>
+          <h3>E-Commerce</h3>
+          <p>Smart online stores with payment gateways and seamless UX.</p>
+        </div>
+        <div class="service-card">
+          <i class="fa-solid fa-bullhorn"></i>
+          <h3>Digital Marketing</h3>
+          <p>Grow your business with SEO, social media, and paid ads.</p>
+        </div>
+        <div class="service-card">
+          <i class="fa-solid fa-shield-halved"></i>
+          <h3>Tech Support</h3>
+          <p>Reliable IT support and maintenance to keep your business running.</p>
+        </div>
+      </div>
+    </div>
+    <button class="slider-btn next"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+</section>
+
+<section class="process">
+  <h2>How We Work</h2>
+  <div class="steps">
+    <div class="step-card">
       <i class="fa-solid fa-lightbulb"></i>
-      <h3>Why Choose Us ?</h3>
-      <p>
-        Because we don’t just deliver services — we deliver <strong>results</strong>.  
-        Every project is tailored, every solution is proactive, and every client is a partner.
-      </p>
+      <h4>1. Discovery</h4>
+      <p>Understanding your goals and audience.</p>
     </div>
-  </section>
+    <div class="step-card">
+      <i class="fa-solid fa-pen-nib"></i>
+      <h4>2. Design</h4>
+      <p>Creative concepts & prototypes.</p>
+    </div>
+    <div class="step-card">
+      <i class="fa-solid fa-code"></i>
+      <h4>3. Development</h4>
+      <p>Building scalable solutions.</p>
+    </div>
+    <div class="step-card">
+      <i class="fa-solid fa-rocket"></i>
+      <h4>4. Launch</h4>
+      <p>Going live with confidence.</p>
+    </div>
+    <div class="step-card">
+      <i class="fa-solid fa-headset"></i>
+      <h4>5. Support</h4>
+      <p>Continuous updates & maintenance.</p>
+    </div>
+  </div>
+</section>
 
-  <!-- PRICING BLURB -->
-  <section class="pricing-blurb container" style="margin-top: 100px;">
-    <h3>Designs range from <strong>R1299— R3999</strong></h3>
-    <p>
-      Pricing depends on features, integrations and custom requirements. Get a
-      personalised quote.
-    </p>
-    <a class="btn primary" href="contact.html">Get a Quote</a>
-  </section>
+<section class="pricing-plans">
+  <h2 class="section-title">Choose Your Plan</h2>
+  <div class="plans-container">
+    <button class="plans-btn prev"><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="plans-wrapper">
+      <div class="plans-slider">
+        <div class="plan-card">
+          <h3>Web Packages</h3>
+          <p class="price">From R999</p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Responsive Modern Website</li>
+              <li><i class="fa-solid fa-check"></i> Up to 5 Pages</li>
+              <li><i class="fa-solid fa-check"></i> SEO Optimization</li>
+              <li><i class="fa-solid fa-check"></i> Free 1-Month Support</li>
 
-  <!-- FOOTER -->
-  <footer class="site-footer" style="padding: 60px 40px; background-color:black; color: #bc903d;">
-    <div class="container footer-inner" style="display: flex; flex-wrap: wrap; gap: 30px;">
-      <div class="footer-col" style="flex: 1 1 300px; padding-right: 100px;">
-        <img src="images/tr20250821_142802.png" alt="PEARMIACT Logo" style="width:120px; margin-bottom: 5px;"  />
-        <div class="heading" style="padding:  5px; background-color: #000000; color: burlywood;  font-size: 0.8em;" >
-          <p>From Learning to Launch — We Build Your Future</p>
+
+          </ul>
+          <a href="web-design.html" class="btn">view packages</a>
         </div>
-        <div class="social-icons" style="color: burlywood; padding: 10px;font-size: 1.5em; margin-right: 70px;">
-          <i class="fa-brands fa-whatsapp"></i>
-          <i class="fa-brands fa-x-twitter"></i>
-          <i class="fa-brands fa-instagram"></i>
-          <i class="fa-brands fa-facebook"></i>
+        <div class="plan-card">
+          <h3>Graphic Design Packages</h3>
+          <p class="price">From R1499</p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Professional Logo Design</li>
+            <li><i class="fa-solid fa-check"></i> Social Media Kit</li>
+            <li><i class="fa-solid fa-check"></i> Business Cards & Branding</li>
+            <li><i class="fa-solid fa-check"></i> 3 Initial Concepts</li>
+            <li><i class="fa-solid fa-check"></i> Flyers</li>
+            <li><i class="fa-solid fa-check"></i> Brochures & Company Profiles</li>
+            <li><i class="fa-solid fa-check"></i> Custom Icons & Graphics</li>
+            <li><i class="fa-solid fa-check"></i> Brand Guidelines (Mini Style Guide)</li>
+
+          </ul>
+          <a href="logos&graphic-design.html" class="btn">View packages</a>
         </div>
-      </div>
-      <div class="footer-col" style="flex: 1 1 150px;margin-right: 50px;">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="services.html" style="color:burlywood;">All Services</a></li>
-          <li><a href="clothing.html" style="color:burlywood;">Clothing</a></li>
-          <li><a href="portfolio.html" style="color:burlywood;">Portfolio</a></li>
-          <li><a href="about.html" style="color:burlywood;">About Us</a></li>
-          <li><a href="contact.html" style="color:burlywood;">Contact Us</a></li>
-        </ul>
-      </div>
-      <div class="footer-col" style="flex: 1 1 150px; margin-right: 100px;">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="privacy-policy.html" style="color:burlywood;">Privacy Policy</a></li>
-          <li><a href="terms-and-conditions.html" style="color:burlywood;">Terms & Conditions</a></li>
-          <li><a href="faq.html" style="color:burlywood;">FAQ</a></li>
-          <li><a href="refund-policy.html" style="color:burlywood;">Refund Policy</a></li>
-          <li><a href="shipping-delivery.html" style="color:burlywood;">Shipping & Delivery</a></li>
-        </ul>
-      </div>
-      <div class="footer-col" style="flex: 1 1 150px; margin-left: 10px;">
-        <h4>Contacts</h4>
-        <p style="color: burlywood;">Email: info@pearmiact.com</p>
-        <p style="color: burlywood;">Phone: +27 77 366 3671</p>
+
+        <div class="plan-card">
+                    <h3>E-Commerce stores</h3>
+                    <p class="price">From R2399</p>
+                    <ul>
+                     <li><i class="fa-solid fa-check"></i> Fully Responsive, Modern Online Store</li>
+                      <li><i class="fa-solid fa-check"></i> Includes up to 10 Essential Pages</li>
+                      <li><i class="fa-solid fa-check"></i> SEO Optimization</li>
+                      <li><i class="fa-solid fa-check"></i> Secure Payment Gateway Integration</li>
+                      <li><i class="fa-solid fa-check"></i> Product Management System (Add, Edit, Remove Products)</li>
+                      <li><i class="fa-solid fa-check"></i> Mobile-Friendly Shopping Experience</li>
+
+                    </ul>
+                    <a href="web-design.html" class="btn">view packages</a>
+                  </div>
+
+                  <div class="plan-card">
+                    <h3>logo designs</h3>
+                    <p class="price">From R229</p>
+                    <ul>
+                     <li><i class="fa-solid fa-check"></i> Professional Logo Design</li>
+                      <li><i class="fa-solid fa-check"></i> Social Media Kit</li>
+                      <li><i class="fa-solid fa-check"></i> Business Cards & Branding</li>
+                      <li><i class="fa-solid fa-check"></i> 3 Initial Concepts</li>
+
+                    </ul>
+                    <a href="logos&graphic-design.html" class="btn">view packages</a>
+                  </div>
+
+                   <div class="plan-card">
+                          <h3>Business websites </h3>
+                          <p class="price">From R3199</p>
+                          <ul>
+       <li><i class="fa-solid fa-check"></i> Responsive Modern Website</li>
+                           <li><i class="fa-solid fa-check"></i> 20+ Pages</li>
+                            <li><i class="fa-solid fa-check"></i> SEO Optimization</li>
+                            <li><i class="fa-solid fa-check"></i> Free 1-Month Support</li>
+                            <li><i class="fa-solid fa-check"></i> Google Maps Integration</li>
+                            <li><i class="fa-solid fa-check"></i> Blog Functionality</li>
+                            <li><i class="fa-solid fa-check"></i> Social Media Integration</li>
+                            <li><i class="fa-solid fa-check"></i> Portfolio Showcase</li>
+                            <li><i class="fa-solid fa-check"></i> Membership or Client Portal</li>
+                            <li><i class="fa-solid fa-check"></i> Payment Integration</li>                       
+                         </ul>
+                         <a href="web-design.html" class="btn">view packages</a>
+                      </div>
+                    </div>
+                    </div>
+                    <button class="plans-btn next"><i class="fa-solid fa-chevron-right"></i></button>
+                  </div>
+                  </section>
+
+<!-- FAQ -->
+<section class="faq">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-container">
+
+    <!-- FAQ Item -->
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>How long does it take to build a website?</span>
+        <i class="fa-solid fa-plus"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Most projects take 2–4 weeks depending on complexity.</p>
       </div>
     </div>
-    <div class="site-copy" style="text-align:center; margin-top:20px;color: burlywood;">
-      © <span id="year"></span> PEARMIACT — All rights reserved
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Will my website be secured?</span>
+        <i class="fa-solid fa-plus"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Absolutely. All our websites are built with secure coding practices, and SSL is included to ensure safe browsing and transactions..</p>
+      </div>
     </div>
-  </footer>           
 
-  <!-- JS -->
-  <script src="pages/scripts/nav.js"></script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+     <div class="faq-item">
+      <button class="faq-question">
+        <span>Can I track visitors and analytics?</span>
+        <i class="fa-solid fa-plus"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Yes. We integrate Google Analytics so you can monitor website traffic, user behavior, and key performance metrics.</p>
+      </div>
+    </div>
+    
+    
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Can I request revisions?</span>
+        <i class="fa-solid fa-plus"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Absolutely. We offer unlimited revisions until you’re satisfied.</p>
+      </div>
+    </div>
 
-    // Mobile nav toggle
- document.addEventListener('DOMContentLoaded', () => {
-  const hamburger = document.getElementById('hamburger');
-  const nav = document.getElementById('mainNav');
+  </div>
+</section>
 
-  hamburger.addEventListener('click', () => {
-    nav.classList.toggle('show');
-  });
 
-  // Update footer year
-  document.getElementById('year').textContent = new Date().getFullYear();
+<section class="cta">
+  <div class="cta-inner">
+    <h2>Ready to Elevate Your Business?</h2>
+    <p>Let’s build your next big project together.</p>
+    <a href="contact.html" class="btn">Get in Touch</a>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    
+    <!-- Logo & tagline -->
+    <div class="footer-col">
+      <img src="images/tr20250821_142802.png" alt="PEARMIACT Logo" class="footer-logo"/>
+      <p class="tagline">From Learning to Launch — We Build Your Future</p>
+      
+      <!-- Social Icons -->
+      <div class="social-icons">
+        <h2> Follow Us</h2>
+        <a href="https://x.com/Pearmaict" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/pearmiact/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61580539605200" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/in/perfect-siboza-b4821233b/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="services.html">All Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Legal -->
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+
+    <!-- Contacts -->
+    <div class="footer-col">
+      <h4>Contacts</h4>
+      <p>Email: <a href="mailto:info@pearmiact.com">info@pearmiact.com</a></p>
+      <p>Phone: <a href="tel:+27773663671">+27 77 366 3671</a></p>
+    </div>
+
+  </div>
+
+  <!-- Copyright -->
+  <div class="site-copy">
+    © <span id="year"></span> PEARMIACT — All rights reserved
+  </div>
+</footer>
+
+<!-- JS -->
+
+<script >// PARTICLES
+
+  const container = document.getElementById('particles-js');
+  const canvas = document.createElement('canvas');
+  container.appendChild(canvas);
+  const ctx = canvas.getContext('2d');
+
+  let particles = [];
+  const maxDistance = 120;
+
+  function resizeCanvas() {
+    canvas.width = container.offsetWidth;
+    canvas.height = container.offsetHeight;
+    initParticles();
+  }
+
+  window.addEventListener('resize', resizeCanvas);
+
+  function initParticles() {
+    particles = [];
+    const count = Math.floor((canvas.width * canvas.height) / 8000);
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 2,
+        vy: (Math.random() - 0.5) * 2,
+        size: Math.random() * 3 + 1,
+        color: 'burlywood'
+      });
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Draw particles
+    for (let p of particles) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fillStyle = p.color;
+      ctx.fill();
+    }
+
+    // Draw lines
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < maxDistance) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(222,184,135,${1 - dist / maxDistance})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+    }
+
+    updateParticles();
+    requestAnimationFrame(draw);
+  }
+
+  function updateParticles() {
+    for (let p of particles) {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x <= 0 || p.x >= canvas.width) p.vx *= -1;
+      if (p.y <= 0 || p.y >= canvas.height) p.vy *= -1;
+    }
+  }
+
+  resizeCanvas();
+  draw();
+
+// SLIDERS
+const plansSlider = document.querySelector(".plans-slider");
+const plansPrev = document.querySelector(".plans-btn.prev");
+const plansNext = document.querySelector(".plans-btn.next");
+let planScroll = 0;
+const planWidth = 370;
+
+plansNext.addEventListener("click", () => {
+  planScroll += planWidth;
+  if (planScroll > (plansSlider.scrollWidth - plansSlider.clientWidth)) planScroll = 0;
+  plansSlider.style.transform = `translateX(-${planScroll}px)`;
+});
+plansPrev.addEventListener("click", () => {
+  planScroll -= planWidth;
+  if (planScroll < 0) planScroll = plansSlider.scrollWidth - plansSlider.clientWidth;
+  plansSlider.style.transform = `translateX(-${planScroll}px)`;
 });
 
+const slider = document.querySelector(".slider");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+let scrollAmount = 0;
+const cardWidth = 300;
 
-    // Services dropdown toggle on mobile
-    const serviceParent = document.querySelector('.has-mega');
-    const serviceLink = serviceParent.querySelector('a');
+nextBtn.addEventListener("click", () => {
+  scrollAmount += cardWidth;
+  if (scrollAmount > (slider.scrollWidth - slider.clientWidth)) scrollAmount = 0;
+  slider.style.transform = `translateX(-${scrollAmount}px)`;
+});
+prevBtn.addEventListener("click", () => {
+  scrollAmount -= cardWidth;
+  if (scrollAmount < 0) scrollAmount = slider.scrollWidth - slider.clientWidth;
+  slider.style.transform = `translateX(-${scrollAmount}px)`;
+});
 
-    serviceLink.addEventListener('click', (e) => {
-      if (window.innerWidth <= 768) {
+// YEAR
+document.getElementById("year").textContent = new Date().getFullYear();
+
+(function() {
+  const hamburger = document.getElementById('hamburger');
+  const navList = document.getElementById('navList');
+  const hasMegaToggle = document.querySelectorAll('.has-mega-toggle');
+
+  // Hamburger click — toggle mobile menu
+  hamburger.addEventListener('click', () => {
+    const isOpen = navList.classList.toggle('show');
+    hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+    // Switch icon between bars and close
+    hamburger.innerHTML = isOpen
+      ? '<i class="fa-solid fa-xmark"></i>'
+      : '<i class="fa-solid fa-bars"></i>';
+  });
+
+  // Close mobile menu automatically when resizing up
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900 && navList.classList.contains('show')) {
+      navList.classList.remove('show');
+      hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Mega menu toggle on mobile
+  hasMegaToggle.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      if (window.innerWidth <= 900) {
         e.preventDefault();
-        serviceParent.classList.toggle('open');
+        const parent = toggle.parentElement;
+        const mega = parent.querySelector('.mega');
+        const isShown = mega.classList.toggle('show-mobile');
+
+        toggle.setAttribute('aria-expanded', isShown ? 'true' : 'false');
+        mega.setAttribute('aria-hidden', isShown ? 'false' : 'true');
       }
     });
-  </script>
+  });
+
+  // Close mobile menu when clicking a link
+  document.querySelectorAll('#navList a').forEach(a => {
+    a.addEventListener('click', () => {
+      if (window.innerWidth <= 900) {
+        navList.classList.remove('show');
+        hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+})();
+
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const faqItem = button.parentElement;
+
+    // Close other items
+    document.querySelectorAll('.faq-item').forEach(item => {
+      if (item !== faqItem) {
+        item.classList.remove('active');
+      }
+    });
+
+    // Toggle current
+    faqItem.classList.toggle('active');
+  });
+});
+</script>
+
 </body>
 </html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PEARMIACT WhatsApp</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+  /* WhatsApp container */
+  #whatsapp-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  /* Text bubble */
+  #whatsapp-text {
+    background: #25D366;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    white-space: nowrap;
+  }
+
+  /* WhatsApp button */
+  #whatsapp-btn {
+    background: #25D366;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  #whatsapp-btn:hover, #whatsapp-text:hover {
+    background: #20b954;
+  }
+
+  @media(max-width: 500px){
+    #whatsapp-text {
+      display: none; /* hide text on very small screens */
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- WhatsApp Button + Text -->
+<div id="whatsapp-container">
+  <div id="whatsapp-text">Chat with us</div>
+  <a id="whatsapp-btn" 
+     href="https://wa.me/27624409086" 
+     target="_blank" 
+     title="Chat with us on WhatsApp">
+     <i class="fa-brands fa-whatsapp"></i>
+  </a>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
 
 
 
